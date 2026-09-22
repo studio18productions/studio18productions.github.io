@@ -30,7 +30,7 @@ automatically. A wrong filename simply does nothing. No HTML edits are needed or
 |---|---|---|
 | `images/tile-photo.jpg` | 1200 × 1000 | A photographer on location (office or retail space) with a softbox and a mirrorless camera, bright and clean, white or light background. |
 | `images/tile-video.jpg` | 1600 × 670 (2.39:1) | A single beautiful cinematic film frame: an interview subject lit with a key light, dark background, looks like a still from a brand film. |
-| `images/tile-ai-apps.png` | 1600 × 1000 (16:10) | Shown on the laptop screen in the top hero. Screenshot-style mockup of a custom AI assistant interface: dark UI, sidebar, a chat with two or three short messages about invoices or scheduling. No real company names. |
+| `images/tile-ai-apps.jpg` | 1600 × 1000 (16:10) | DONE by Claude: rendered from code so it matches the site's typography. Do not regenerate or replace this file. |
 | `images/tile-integration.jpg` | 1200 × 1000 | A small business team at a table with laptops, one person presenting, bright office, natural light. Training session feel. |
 
 ### Work carousel (portrait 3:4, 900 × 1200 each)
@@ -63,3 +63,16 @@ automatically. A wrong filename simply does nothing. No HTML edits are needed or
 4. Wait about a minute, then open https://studio18productions.github.io and confirm each
    image shows in its spot. If one is missing, the filename or folder is wrong; fix and push again.
 5. Tell the owner "media pushed".
+
+## Round 2 (optional polish, after review)
+Claude reviewed every image. These are the only ones worth redoing. Same rules as above; same filenames; overwrite in place and push.
+| File | Fix |
+|---|---|
+| `images/detail-ai-video.jpg` | Regenerate to match the other three "closer look" photos (bright daylit white office, same lens). Show an editor directing AI video: a large wall display with an impossible generated scene and a simple storyboard strip on a second screen. No color-grading panel, no trackballs, no scopes, no recognizable software UI. 1600 × 1200. |
+| `images/work-ai-explainer.jpg` | Regenerate as a cinematic still from a finished AI-generated scene (a product or presenter in a stylized CG environment, soft directional light, subject filling ~80% of the frame). Not abstract cubes. Mid-key, warm-neutral. 900 × 1200. |
+| `images/work-assistant.jpg` | The chat on the phone screen has the roles reversed (the assistant's answer is in the blue "sent" bubble). Regenerate with the customer's question in the blue right-hand bubble and the assistant's reply in the grey left-hand bubble, plus a message input bar at the bottom so the screen is not mostly empty. 900 × 1200. |
+| `images/tile-photo.jpg` | Retouch out two stray objects: the blurred sheepskin on a stool behind the sitter, and the black pot cut off at the bottom-left edge. Keep 1200 × 1000. |
+| `images/detail-photo.jpg` | Extend the bottom of the frame so the tripod feet and a strip of floor are visible, then resize back to exactly 1600 × 1200. |
+| `images/detail-ai.jpg` | Replace the cartoon robot avatar in the on-screen chat UI with a plain neutral circle. Keep 1600 × 1200. |
+
+Done by Claude, do not touch: `images/tile-ai-apps.jpg`, `images/og.jpg`, `images/work-brandfilm.jpg` (re-cropped), everything in `images/thumbs/`.

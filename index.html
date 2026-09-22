@@ -10,7 +10,7 @@
 <meta property="og:image" content="https://studio18productions.github.io/images/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Cinema camera and soft studio lighting">
+<meta property="og:image:alt" content="Studio 18 Productions wordmark over a cinema camera on a lit set">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -53,6 +53,7 @@
   .on-dark .lede b{color:var(--ink-on-dark)}
   .small{font-size:14px;color:var(--ink-2)}
   .links{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:clamp(17px,2vw,21px);letter-spacing:-.02em}
+  .links a{padding:10px 8px;margin:-10px -8px}
   .links a::after{content:" \203A";font-weight:500}
   .grad{-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
   .g-ai{background-image:linear-gradient(90deg,#2997ff,#bf5af2 50%,#ff375f)}
@@ -71,9 +72,11 @@
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none} *{animation:none!important;transition:none!important}}
 
   /* Ribbon */
-  .ribbon{background:var(--gray);text-align:center;font-size:14px;padding:12px 22px;color:var(--ink);letter-spacing:-.01em}
-  .ribbon a{margin-left:6px}
+  .ribbon{background:var(--white);border-bottom:1px solid var(--gray-2);text-align:center;font-size:14px;padding:12px 22px;color:var(--ink);letter-spacing:-.01em}
+  .ribbon a{display:inline-block;padding:10px 4px;margin:-10px -4px -10px 2px;white-space:nowrap}
   .ribbon a::after{content:" \203A"}
+  .ribbon .short{display:none}
+  @media (max-width:640px){.ribbon .long{display:none}.ribbon .short{display:inline}}
 
   /* Global nav (apple.com: 44px, black translucent) */
   .gnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(0,0,0,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);color:#f5f5f7}
@@ -85,19 +88,20 @@
   .gnav ul a{color:#f5f5f7;opacity:.8;font-size:12px;letter-spacing:-.01em;font-weight:400}
   .gnav ul a:hover{opacity:1;text-decoration:none}
   .gnav .right{display:flex;align-items:center;gap:18px}
-  .gnav .ico{width:16px;height:16px;opacity:.8;display:block}
-  .burger{display:none;background:none;border:0;width:36px;height:36px;cursor:pointer;color:#f5f5f7;padding:0}
+  .gnav .right .cta{color:#f5f5f7;opacity:.8;font-size:12px;letter-spacing:-.01em}
+  .gnav .right .cta:hover{opacity:1;text-decoration:none}
+  .burger{display:none;background:none;border:0;width:44px;height:44px;margin-right:-4px;cursor:pointer;color:#f5f5f7;padding:0}
   .burger span{display:block;width:17px;height:1.3px;background:currentColor;margin:5px auto;transition:transform .3s,opacity .3s}
   .mnav{display:none;background:rgba(0,0,0,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:8px 0 20px}
   .mnav a{display:block;padding:13px 22px;color:#f5f5f7;font-size:17px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.1)}
   .mnav a:hover{text-decoration:none}
-  @media (max-width:860px){.gnav ul,.gnav .right .btn{display:none}.burger{display:block}.gnav.open .mnav{display:block}.gnav.open .burger span:nth-child(1){transform:translateY(6.3px) rotate(45deg)}.gnav.open .burger span:nth-child(2){opacity:0}.gnav.open .burger span:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}}
+  @media (max-width:860px){.gnav ul,.gnav .right .cta{display:none}.burger{display:block}.gnav.open .mnav{display:block}.gnav.open .burger span:nth-child(1){transform:translateY(6.3px) rotate(45deg)}.gnav.open .burger span:nth-child(2){opacity:0}.gnav.open .burger span:nth-child(3){transform:translateY(-6.3px) rotate(-45deg)}}
 
   /* Product heroes: edge-to-edge panels, apple.com homepage */
   .hero{padding-top:52px;text-align:center;overflow:hidden;position:relative}
   .hero .copy{display:flex;flex-direction:column;align-items:center;gap:10px}
   .hero .links{margin-top:8px}
-  .hero.h-a{background:var(--gray);padding-bottom:0}
+  .hero.h-a{background:var(--gray);padding-bottom:clamp(56px,7vw,96px)}
   .hero.h-b{background:var(--black);color:var(--ink-on-dark);padding-bottom:0}
   .hero.h-b .tag{color:var(--ink-2-on-dark)}
   .hero .eyebrow{font-size:14px;font-weight:600;color:var(--ink-2);letter-spacing:.02em}
@@ -109,7 +113,6 @@
   .mac .scr{aspect-ratio:16/10;background:#000;border-radius:16px 16px 0 0;padding:10px 10px 0;box-shadow:0 30px 80px rgba(0,0,0,.28),inset 0 0 0 1px #3a3a3c}
   .mac .disp{height:100%;background:#0e0e10;border-radius:8px 8px 0 0;overflow:hidden;display:grid;grid-template-columns:150px 1fr;text-align:left;color:#f5f5f7;position:relative}
   .mac .disp img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:2}
-  .mac .disp.has-img img.slot{display:block}
   .mac .disp.has-img .side,.mac .disp.has-img .chat{visibility:hidden}
   .mac .side{background:#161617;border-right:1px solid #2a2a2d;padding:14px 12px;font-size:11px;color:#86868b}
   .mac .side b{display:block;color:#f5f5f7;font-size:12px;margin-bottom:10px;font-weight:600}
@@ -124,42 +127,32 @@
   @keyframes dot{0%,100%{opacity:.3}50%{opacity:1}}
   .mac .base{height:16px;background:linear-gradient(180deg,#e5e5ea,#c7c7cc 60%,#a1a1a6);border-radius:0 0 14px 14px;position:relative;box-shadow:0 12px 30px rgba(0,0,0,.2)}
   .mac .base::after{content:"";position:absolute;left:50%;top:0;width:14%;height:5px;transform:translateX(-50%);background:#8e8e93;border-radius:0 0 6px 6px;opacity:.6}
-  .phone{position:absolute;right:max(0px,calc(50% - 450px));bottom:-6px;width:min(170px,20vw);aspect-ratio:1/2.05;border-radius:30px;background:#000;padding:7px;box-shadow:0 30px 70px rgba(0,0,0,.35),inset 0 0 0 1.5px #3a3a3c;z-index:2}
+  .phone{position:absolute;right:max(0px,calc(50% - 450px));bottom:0;width:min(170px,20vw);aspect-ratio:1/2.05;border-radius:30px;background:#000;padding:7px;box-shadow:0 30px 70px rgba(0,0,0,.35),inset 0 0 0 1.5px #3a3a3c;z-index:2}
   .phone .ps{height:100%;border-radius:24px;background:#fff;overflow:hidden;position:relative}
   .phone .isl{position:absolute;left:50%;top:8px;width:34%;height:9px;border-radius:9px;background:#000;transform:translateX(-50%);z-index:2}
   .phone .grid{position:absolute;inset:34px 8px 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
   .phone .grid img{width:100%;height:100%;min-height:0;object-fit:cover;border-radius:3px}
-  .phone .grid i{border-radius:3px;background:#ddd}
-  .phone .grid i:nth-child(1){background:linear-gradient(160deg,#ffd60a,#ff9f0a)}.phone .grid i:nth-child(2){background:linear-gradient(160deg,#5e5ce6,#0a84ff)}.phone .grid i:nth-child(3){background:linear-gradient(160deg,#ff375f,#bf5af2)}.phone .grid i:nth-child(4){background:linear-gradient(160deg,#30d158,#64d2ff)}.phone .grid i:nth-child(5){background:linear-gradient(160deg,#1d1d1f,#48484a)}.phone .grid i:nth-child(6){background:linear-gradient(160deg,#ff9f0a,#ff375f)}.phone .grid i:nth-child(7){background:linear-gradient(160deg,#64d2ff,#0a84ff)}.phone .grid i:nth-child(8){background:linear-gradient(160deg,#bf5af2,#5e5ce6)}.phone .grid i:nth-child(9){background:linear-gradient(160deg,#e5e5ea,#c7c7cc)}
-  @media (max-width:640px){.phone{display:none}.mac{width:94vw}.mac .disp{grid-template-columns:1fr}.mac .side{display:none}}
+  @media (max-width:640px){.mac{display:none}.phone{position:relative;right:auto;bottom:auto;width:min(250px,66vw);margin:0 auto;box-shadow:0 30px 70px rgba(0,0,0,.28),inset 0 0 0 1.5px #3a3a3c}.devices{margin-top:36px}}
 
-  /* Cinematic frame (AI Video hero) */
-  .ai-showcase{width:min(1100px,calc(100% - 44px));margin:48px auto 0}
-  .ai-showcase img{display:block;width:100%;height:auto;border-radius:20px}
-  .ai-showcase figcaption{margin-top:14px;font-size:14px;color:var(--ink-2-on-dark)}
+  /* Cinematic frame (Video hero) */
   .frame{position:relative;width:100%;aspect-ratio:16/7.2;margin-top:48px;overflow:hidden;background:#0b0b0d}
-  .frame canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .frame img.slot,.frame video.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .frame video.slot{opacity:0;pointer-events:none}
-  .frame.has-img canvas{display:none}.frame.has-img img.slot{display:block}
-  .frame.has-video img.slot,.frame.has-video canvas{display:none}.frame.has-video video.slot{opacity:1}
-  .video-toggle{position:absolute;right:20px;bottom:12px;z-index:3;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(0,0,0,.75);color:#fff;padding:8px 14px;font:inherit;font-size:13px;cursor:pointer}
-  .video-toggle:hover{background:#1d1d1f}
-  .frame .grain{position:absolute;inset:0;opacity:.16;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");mix-blend-mode:overlay;pointer-events:none}
+  .frame img.slot,.frame video.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block}
+  .frame video.slot{opacity:0;pointer-events:none;transition:opacity .8s ease}
+  .frame.has-video video.slot{opacity:1}
+  .video-toggle{position:absolute;right:22px;bottom:18px;z-index:3;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font:inherit;font-size:0;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center}
+  .video-toggle::before{content:"";width:10px;height:12px;background:currentColor;clip-path:polygon(0 0,35% 0,35% 100%,0 100%,65% 100%,65% 0,100% 0,100% 100%,65% 100%,65% 0,35% 0,35% 100%)}
+  .video-toggle.paused::before{clip-path:polygon(15% 0,100% 50%,15% 100%)}
+  .video-toggle:hover{background:rgba(0,0,0,.7)}
+  @media (max-width:640px){.video-toggle{bottom:14px;right:14px}}
   .frame .vig{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 45%,rgba(0,0,0,.7))}
-  .frame .bars{position:absolute;left:0;right:0;height:9%;background:#000}
-  .frame .bars.t{top:0}.frame .bars.b{bottom:0}
-  .hud{position:absolute;inset:9% 0;color:#f5f5f7;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:.04em;pointer-events:none}
+  .hud{position:absolute;inset:0;color:#f5f5f7;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:.04em;pointer-events:none}
   .hud>div{position:absolute;display:flex;gap:12px;align-items:center}
-  .hud .tl{left:24px;top:18px}.hud .tr{right:24px;top:18px}.hud .bl{left:24px;bottom:18px}.hud .br{right:24px;bottom:18px}
+  .hud .tl{left:24px;top:18px}.hud .tr{right:24px;top:18px}
   .hud .rec{display:flex;gap:8px;align-items:center}
   .hud .rec i{width:9px;height:9px;border-radius:50%;background:#ff453a;box-shadow:0 0 0 3px rgba(255,69,58,.25);animation:blink 1.4s steps(1) infinite}
   @keyframes blink{50%{opacity:.25}}
   .hud .pill{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.18);padding:4px 9px;border-radius:6px}
-  .hud .focus{position:absolute;left:50%;top:50%;width:min(26%,220px);aspect-ratio:1.4;transform:translate(-50%,-50%);border:1.5px solid rgba(255,255,255,.7);border-radius:6px}
-  .hud .focus::before,.hud .focus::after{content:"";position:absolute;left:50%;top:50%;background:rgba(255,255,255,.75)}
-  .hud .focus::before{width:14px;height:1.5px;transform:translate(-50%,-50%)}.hud .focus::after{width:1.5px;height:14px;transform:translate(-50%,-50%)}
-  @media (max-width:640px){.frame{aspect-ratio:4/4}.frame img.slot,.frame video.slot{object-position:70% center}.hud .tr,.hud .br{display:none}.ai-showcase{width:calc(100% - 24px)}.ai-showcase img{border-radius:14px}}
+  @media (max-width:640px){.frame{aspect-ratio:4/4}.frame img.slot,.frame video.slot{object-position:100% center}.hud .tr{display:none}}
 
   /* Two-column tile grid (apple.com) */
   .tiles{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding:var(--gap);background:var(--snow)}
@@ -172,60 +165,41 @@
   .tile .tag{margin-top:8px;font-size:clamp(17px,1.8vw,21px);max-width:40ch}
   .tile .links{margin-top:12px;font-size:17px}
   .tile .art{margin-top:auto;width:100%;position:relative}
-  .art img.slot{display:block;width:min(560px,100%);height:auto;margin:30px auto 0;border-radius:16px 16px 0 0;box-shadow:0 30px 70px rgba(0,0,0,.3);object-fit:cover}
+  .tile{min-height:0}
+  .art img.slot{display:block;width:min(560px,100%);aspect-ratio:16/10;height:auto;margin:36px auto 0;border-radius:16px 16px 0 0;box-shadow:0 30px 70px rgba(0,0,0,.3);object-fit:cover;object-position:center 20%}
+  .art img.slot.cine{object-position:68% 30%}
+  .tile.dark .art img.slot{box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 70px rgba(0,0,0,.6)}
+  @media (max-width:860px){.tiles{grid-template-columns:1fr}.tile .art{margin-top:28px}.art img.slot{margin-top:0}}
 
-  .art img.slot.cine{width:min(700px,100%)}
-  @media (max-width:860px){.tiles{grid-template-columns:1fr}.tile{min-height:0}.tile .art{margin-top:24px}.art img.slot{margin-top:0}}
-
-  /* Camera */
-  .cam{width:min(360px,80%);aspect-ratio:1.25;margin:34px auto -46px;border-radius:30px 30px 0 0;background:linear-gradient(180deg,#48484a,#1c1c1e 70%);position:relative;box-shadow:0 40px 80px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.25)}
-  .cam::before{content:"";position:absolute;left:50%;top:22%;width:54%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 38% 34%,#a0a0a5 0 6%,#151516 7% 30%,#3a3a3c 31% 36%,#0a0a0a 37% 58%,#2c2c2e 59% 66%,#0a0a0a 67%);box-shadow:inset 0 0 0 7px #6e6e73,0 10px 30px rgba(0,0,0,.5)}
-  .cam::after{content:"";position:absolute;left:12%;top:9%;width:22%;height:6%;border-radius:5px;background:linear-gradient(90deg,#0a84ff,#64d2ff)}
-  .cam .lbl{position:absolute;left:12%;top:18%;font-size:10px;letter-spacing:.2em;color:#a1a1a6;font-weight:600}
-  .cam .grip{position:absolute;right:8%;top:8%;width:12%;height:40%;border-radius:10px;background:linear-gradient(180deg,#2c2c2e,#0a0a0a)}
-  /* Film */
-  .film{width:min(560px,94%);aspect-ratio:2.39;margin:34px auto -34px;border-radius:12px;position:relative;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.45);background:linear-gradient(115deg,#0a84ff,#5e5ce6 35%,#bf5af2 60%,#ff375f)}
-  .film::before,.film::after{content:"";position:absolute;left:0;right:0;height:11%;background:repeating-linear-gradient(90deg,#000 0 12px,transparent 12px 24px);opacity:.75}
-  .film::before{top:0}.film::after{bottom:0}
-  .film .tc{position:absolute;right:14px;bottom:17%;font-variant-numeric:tabular-nums;font-size:12px;color:#fff;font-weight:500;letter-spacing:.06em;background:rgba(0,0,0,.45);padding:4px 8px;border-radius:6px}
-  .film .eq{position:absolute;left:14px;bottom:17%;display:flex;gap:3px;align-items:flex-end;height:22px}
-  .film .eq i{width:4px;background:rgba(255,255,255,.85);border-radius:2px;animation:eq 1.1s ease-in-out infinite}
-  .film .eq i:nth-child(2){animation-delay:.15s}.film .eq i:nth-child(3){animation-delay:.3s}.film .eq i:nth-child(4){animation-delay:.45s}.film .eq i:nth-child(5){animation-delay:.6s}
-  @keyframes eq{0%,100%{height:30%}50%{height:100%}}
-  /* Phone (AI apps tile) */
-  .phone.solo{position:relative;right:auto;bottom:auto;margin:30px auto -70px;width:min(230px,60%);z-index:1}
-  .phone.solo .ps{background:#0e0e10}
-  .phone.solo .pchat{position:absolute;inset:40px 10px 10px;display:flex;flex-direction:column;gap:7px;font-size:10.5px;line-height:1.3;color:#f5f5f7;text-align:left}
-  .phone.solo .msg{max-width:84%;padding:6px 9px;border-radius:11px}
-  /* Model orbit */
-  .orbit{position:relative;width:min(520px,94%);aspect-ratio:1.6;margin:24px auto -30px}
-  .orbit .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a3a3c,#0a0a0a);box-shadow:0 20px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.2);display:grid;place-items:center;color:#f5f5f7;font-weight:700;font-size:22px;letter-spacing:-.03em;z-index:2}
-  .orbit .core small{display:block;font-size:9px;letter-spacing:.2em;font-weight:600;color:#a1a1a6;text-align:center}
-  .orbit .ring{position:absolute;left:50%;top:50%;width:78%;aspect-ratio:1.6;transform:translate(-50%,-50%);border:1px solid rgba(255,255,255,.14);border-radius:50%}
-  .orbit .m{position:absolute;width:88px;height:88px;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#fff;font-weight:600;font-size:13px;box-shadow:0 24px 50px rgba(0,0,0,.4);z-index:1}
-  .orbit .m small{font-size:9px;letter-spacing:.06em;opacity:.8;font-weight:500}
-  .orbit .m1{left:6%;top:12%;background:linear-gradient(150deg,#e08a6a,#b8593d)}
-  .orbit .m2{right:6%;top:12%;background:linear-gradient(150deg,#19b58d,#0b7d61)}
-  .orbit .m3{left:6%;bottom:8%;background:linear-gradient(150deg,#4a8df8,#9b72cb)}
-  .orbit .m4{right:6%;bottom:8%;background:linear-gradient(150deg,#48484a,#0a0a0a);box-shadow:0 24px 50px rgba(0,0,0,.4),inset 0 0 0 1px #3a3a3c}
-  @media (max-width:420px){.orbit .m{width:70px;height:70px;font-size:11px}}
+  /* AI Video showcase */
+  .sh .eyebrow{font-size:14px;font-weight:600;color:var(--ink-2);letter-spacing:.02em}
+  .showcase{margin:56px 0 0}
+  .sh .links{margin-top:6px}
+  .showcase img{display:block;width:100%;height:auto;border-radius:24px}
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:72px;text-align:center}
+  .trio h4{font-size:28px;letter-spacing:-.03em}
+  .trio p{color:var(--ink-2);margin-top:10px;font-size:16px;max-width:36ch;margin-inline:auto}
+  @media (max-width:860px){.trio{grid-template-columns:1fr;gap:40px}.showcase img{border-radius:16px}}
+  @media (max-width:640px){.showcase img{aspect-ratio:4/3;object-fit:cover}}
 
   /* Statement (scroll-brightening text) */
-  .statement{padding-block:clamp(110px,14vw,180px)}
-  .statement .lede{font-size:clamp(26px,4vw,48px);line-height:1.15;max-width:22ch;margin-inline:auto;letter-spacing:-.03em}
+  .statement{padding-block:clamp(72px,14vw,180px)}
+  .statement .lede{font-size:clamp(26px,4vw,48px);line-height:1.15;max-width:28ch;margin-inline:auto;letter-spacing:-.03em}
   .statement .w{color:#3a3a3c;transition:color .25s}
   .statement .w.on{color:#f5f5f7}
 
   /* Section header */
   section{padding-block:clamp(90px,11vw,150px)}
+  @media (max-width:640px){section{padding-block:clamp(56px,15vw,72px)}.car-wrap,.nums,.feat,.rows,.cmp,.models,.steps,.cgrid,.showcase{margin-top:40px}}
   .sh{max-width:800px;margin-inline:auto;text-align:center;display:flex;flex-direction:column;gap:14px}
   .sh .tag{max-width:60ch;margin-inline:auto}
 
   /* Highlights carousel */
   .car-wrap{position:relative;margin-top:56px}
-  .car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 22px 24px;margin:0 -22px;scrollbar-width:none}
+  .car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:22px;padding:8px 22px 24px;margin:0 -22px;scrollbar-width:none}
+  .car::after{content:"";flex:0 0 calc(100% - min(405px,80vw) - 20px)}
   .car::-webkit-scrollbar{display:none}
-  .card{flex:0 0 min(405px,80vw);border-radius:20px;scroll-snap-align:center;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;background:#1d1d1f}
+  .card{flex:0 0 min(405px,80vw);border-radius:20px;scroll-snap-align:start;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;background:#1d1d1f}
   .card img.slot{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
   .card-copy{padding:28px;flex:1;background:#161617}
   .card>*{position:relative;z-index:2}
@@ -239,27 +213,31 @@
   .c5{background:radial-gradient(70% 60% at 50% 85%,#8e8e93,transparent 60%),linear-gradient(200deg,#1d1d1f,#48484a)}
   .c6{background:radial-gradient(70% 60% at 30% 85%,#ff9f0a,transparent 60%),linear-gradient(200deg,#0b0b0d,#5e5ce6 150%)}
   .car-ctl{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:8px}
-  .dots{display:flex;gap:8px;background:rgba(0,0,0,.06);padding:8px 12px;border-radius:999px}
-  .dots i{width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.25);transition:background .3s;cursor:pointer}
-  .dots i.on{background:var(--ink)}
-  .cbtn{width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.06);color:var(--ink);cursor:pointer;display:grid;place-items:center;font-size:16px}
+  .dots{display:flex;height:36px;align-items:center;padding:0 6px;background:rgba(0,0,0,.06);border-radius:999px}
+  .dots button{width:24px;height:36px;padding:0;border:0;background:none;display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(0,0,0,.25);transition:background .3s}
+  .dots button.on::before{background:var(--ink)}
+  .cbtn{position:relative;width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.06);color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0}
+  .cbtn::after{content:"";position:absolute;inset:-4px;border-radius:50%}
+  .cbtn svg{width:16px;height:16px;display:block}
   .cbtn:hover{background:rgba(0,0,0,.1)}
+  #play .i-play{display:none}#play.paused .i-pause{display:none}#play.paused .i-play{display:block}
 
   /* Numbers */
   .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px}
   .num{border-top:1px solid #424245;padding-top:22px}
-  .num b{display:block;font-size:clamp(44px,6vw,84px);font-weight:600;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
-  .num span{display:block;color:var(--ink-2-on-dark);font-size:17px;margin-top:12px;max-width:22ch}
+  .num b{display:block;width:fit-content;font-size:clamp(44px,6vw,84px);font-weight:600;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+  .num span{display:block;color:var(--ink-2-on-dark);font-size:17px;margin-top:12px;max-width:22ch;text-wrap:balance}
   @media (max-width:860px){.nums{grid-template-columns:repeat(2,1fr)}}
 
   /* Glass feature grid */
   .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
-  .fcard{background:#161617;border-radius:24px;padding:36px 30px;min-height:280px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+  .fcard{background:#161617;border-radius:24px;padding:36px 30px;min-height:280px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;isolation:isolate;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
   .fcard .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:6px}
   .fcard .ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-  .fcard h4{font-size:24px;letter-spacing:-.025em}
+  .fcard h4{font-size:24px;letter-spacing:-.025em;margin-top:auto}
   .fcard p{color:var(--ink-2-on-dark);font-size:16px}
-  .fcard .glow{position:absolute;right:-40px;bottom:-60px;width:220px;height:220px;border-radius:50%;filter:blur(50px);opacity:.35}
+  .fcard .glow{position:absolute;right:-40px;bottom:-60px;width:220px;height:220px;border-radius:50%;filter:blur(50px);opacity:.35;z-index:-1}
   @media (max-width:860px){.feat{grid-template-columns:1fr}.fcard{min-height:0}}
 
   /* Closer look rows (full-width feature sections) */
@@ -270,16 +248,16 @@
   .row p{color:var(--ink-2);margin-top:14px;font-size:19px;line-height:1.35}
   .row ul{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:16px}
   .row ul li{display:flex;gap:12px;align-items:flex-start}
-  .row ul li::before{content:"";flex:0 0 18px;height:18px;border-radius:50%;background:var(--btn);mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='10' fill='white'/><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='10' fill='white'/><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;margin-top:2px}
+  .row ul li::before{content:"";flex:0 0 18px;height:18px;margin-top:2px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='10' fill='%230071e3'/><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat}
   .pic{aspect-ratio:4/3;border-radius:18px;position:relative;overflow:hidden}
   .pic img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .pic.has-img img.slot{display:block}
   .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 50%);pointer-events:none}
+  .pic.has-img::after{display:none}
   .pic.p1{background:radial-gradient(60% 60% at 30% 30%,#ffd60a,transparent 60%),linear-gradient(160deg,#ff9f0a,#ff453a)}
   .pic.p2{background:radial-gradient(60% 60% at 70% 30%,#64d2ff,transparent 60%),linear-gradient(160deg,#5e5ce6,#0a84ff)}
   .pic.p3{background:radial-gradient(60% 60% at 40% 70%,#bf5af2,transparent 60%),linear-gradient(160deg,#ff375f,#ff9f0a)}
   .pic.p4{background:radial-gradient(60% 60% at 60% 30%,#30d158,transparent 60%),linear-gradient(160deg,#64d2ff,#0a84ff)}
-  @media (max-width:860px){.row{grid-template-columns:1fr;padding:28px;gap:24px}}
+  @media (max-width:860px){.row{grid-template-columns:1fr;padding:28px;gap:24px}.row .pic{order:-1}}
 
   /* Compare table (apple.com compare) */
   .cmp{margin-top:64px;overflow-x:auto}
@@ -292,6 +270,18 @@
   .cmp td:first-child{text-align:left;color:var(--ink-2);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
   .cmp td b{display:block;font-size:22px;letter-spacing:-.02em;margin-bottom:4px;font-weight:600}
   .cmp .y{color:var(--btn);font-weight:600}
+  @media (max-width:860px){
+    .cmp{--lbl:128px;--col:clamp(190px,100vw - 176px,260px);margin:48px -22px 0;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity;scroll-padding-left:var(--lbl)}
+    .cmp::-webkit-scrollbar{display:none}
+    .cmp table{min-width:0;width:calc(var(--lbl) + 3*var(--col));border-collapse:separate;border-spacing:0}
+    .cmp th,.cmp td{scroll-snap-align:start}
+    .cmp th:first-child,.cmp td:first-child{width:var(--lbl);position:sticky;left:0;z-index:1;background:var(--white);padding-left:22px;padding-right:12px;box-shadow:8px 0 12px -8px rgba(0,0,0,.08)}
+    .cmp td:first-child{font-size:12px}
+    .cmp td{border-top:1px solid var(--line)}
+    .cmp th .ic{width:48px;height:48px;border-radius:14px}
+    .cmp th .nm{font-size:20px}
+    .cmp th:last-child,.cmp td:last-child{padding-right:22px}
+  }
 
   /* Models */
   .models{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
@@ -301,7 +291,7 @@
   .model p{color:var(--ink-2);font-size:15px;margin-top:8px}
   .model p b{color:var(--ink);display:block;font-weight:600;margin-bottom:2px}
   @media (max-width:860px){.models{grid-template-columns:1fr 1fr}}
-  @media (max-width:520px){.models{grid-template-columns:1fr}}
+  @media (max-width:520px){.models{grid-template-columns:1fr}.model{min-height:0}}
 
   /* Process timeline */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px;position:relative}
@@ -349,15 +339,13 @@
 </head>
 <body>
 
-<div class="ribbon">Now booking fall shoots and AI rollouts. <a href="#contact">Book a discovery call</a></div>
-
 <nav class="gnav" id="gnav" aria-label="Global">
   <div class="wrap">
     <a class="brand" href="#top"><span class="mark" aria-hidden="true">18</span>Studio 18</a>
     <ul>
       <li><a href="#photo">Photography</a></li>
       <li><a href="#video">Video</a></li>
-      <li><a href="#ai-video">AI Video</a></li>
+      <li><a href="#showcase">AI Video</a></li>
       <li><a href="#ai-apps">AI Apps</a></li>
       <li><a href="#integration">AI Integration</a></li>
       <li><a href="#highlights">Work</a></li>
@@ -365,14 +353,16 @@
       <li><a href="#faq">Support</a></li>
     </ul>
     <div class="right">
-      <a class="btn sm" href="#contact">Get in touch</a>
+      <a class="cta" href="#contact">Get in touch</a>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
     </div>
   </div>
   <div class="mnav" id="mnav">
-    <a href="#photo">Photography</a><a href="#video">Video</a><a href="#ai-video">AI Video</a><a href="#ai-apps">AI Apps</a><a href="#integration">AI Integration</a><a href="#highlights">Work</a><a href="#compare">Compare</a><a href="#faq">Support</a><a href="#contact">Get in touch</a>
+    <a href="#photo">Photography</a><a href="#video">Video</a><a href="#showcase">AI Video</a><a href="#ai-apps">AI Apps</a><a href="#integration">AI Integration</a><a href="#highlights">Work</a><a href="#compare">Compare</a><a href="#faq">Support</a><a href="#contact">Get in touch</a>
   </div>
 </nav>
+
+<div class="ribbon"><span class="long">Now booking fall shoots and AI rollouts.</span><span class="short">Now booking fall shoots.</span> <a href="#contact">Book a call</a></div>
 
 <!-- Hero A -->
 <header class="hero h-a" id="top">
@@ -384,52 +374,43 @@
   <div class="devices rv d2" id="devices" aria-label="A laptop running a custom AI assistant beside a phone showing a photo gallery" role="img">
     <div class="mac">
       <div class="scr"><div class="disp" id="disp">
-        <img class="slot" src="images/tile-ai-apps.png" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1240" height="800" decoding="async" fetchpriority="high">
+        <img class="slot" src="images/tile-ai-apps.jpg" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1600" height="1000" decoding="async" fetchpriority="high">
         <div class="side"><b>Studio 18 Assistant</b><i></i><i></i><i></i><i></i><i></i></div>
         <div class="chat" id="chat"></div>
       </div></div>
       <div class="base"></div>
     </div>
     <div class="phone" aria-hidden="true"><div class="ps"><div class="isl"></div><div class="grid">
-      <img src="images/work-product.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
-      <img src="images/work-brandfilm.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
-      <img src="images/work-headshots.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
-      <img src="images/work-ai-explainer.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
-      <img src="images/work-assistant.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
-      <img src="images/work-automation.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
-      <img src="images/detail-photo.jpg" alt="" loading="lazy" width="1600" height="1200" decoding="async">
-      <img src="images/detail-video.jpg" alt="" loading="lazy" width="1600" height="1200" decoding="async">
-      <img src="images/tile-ai-video.jpg" alt="" loading="lazy" width="1920" height="800" decoding="async">
+      <img src="images/thumbs/work-product.jpg" alt="" width="300" height="400" decoding="async">
+      <img src="images/thumbs/work-brandfilm.jpg" alt="" width="300" height="400" decoding="async">
+      <img src="images/thumbs/work-headshots.jpg" alt="" width="300" height="400" decoding="async">
+      <img src="images/thumbs/work-ai-explainer.jpg" alt="" width="300" height="400" decoding="async">
+      <img src="images/thumbs/work-assistant.jpg" alt="" width="300" height="400" decoding="async">
+      <img src="images/thumbs/work-automation.jpg" alt="" width="300" height="400" decoding="async">
+      <img src="images/thumbs/detail-photo.jpg" alt="" width="400" height="300" decoding="async">
+      <img src="images/thumbs/detail-video.jpg" alt="" width="400" height="300" decoding="async">
+      <img src="images/thumbs/tile-ai-video.jpg" alt="" width="400" height="167" decoding="async">
     </div></div></div>
   </div>
 </header>
 
 <!-- Hero B -->
-<section class="hero h-b" id="ai-video">
+<section class="hero h-b" id="video">
   <div class="wrap copy">
-    <p class="eyebrow rv">AI Video Production</p>
-    <h2 class="t-hero rv d1"><span class="grad g-ai">Weeks of work.<br>Days to deliver.</span></h2>
-    <p class="tag rv d2">AI-generated scenes, voices and motion, directed by real filmmakers.</p>
-    <div class="links rv d3"><a href="#compare">Learn more</a><a href="#contact">Start a project</a></div>
+    <p class="eyebrow rv">Video Production</p>
+    <h2 class="t-hero rv d1"><span class="grad g-video">Story, shot beautifully.</span></h2>
+    <p class="tag rv d2">Brand films, commercials and social. Concept to color grade, in 4K.</p>
+    <div class="links rv d3"><a href="#closer">Learn more</a><a href="#contact">Start a project</a></div>
   </div>
-  <figure class="ai-showcase rv">
-    <img src="images/tile-ai-video.jpg" alt="Frosted glass bottle floating above a sculpted ivory surface with a flowing satin ribbon" loading="lazy" width="1920" height="800" decoding="async">
-    <figcaption>AI-generated product concept</figcaption>
-  </figure>
-  <div class="frame rv d3" id="frame" role="group" aria-label="Behind the scenes of a cinema production">
-    <canvas id="aurora" aria-hidden="true"></canvas>
-    <img class="slot" src="images/hero.jpg" alt="Cinema camera rig on a set with soft blue, magenta and amber lights" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="2400" height="1290" decoding="async">
-    <video class="slot" id="hero-video" muted loop playsinline preload="none" poster="images/hero.jpg" aria-label="Slow camera drift across a cinema production set"></video>
-    <div class="grain"></div><div class="vig"></div>
-    <div class="bars t"></div><div class="bars b"></div>
+  <div class="frame rv d3" id="frame" role="group" aria-label="Behind the scenes on a Studio 18 video shoot">
+    <img class="slot" src="images/hero.jpg" alt="Cinema camera rig on a set with soft blue, magenta and amber lights" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="2400" height="1290" decoding="async">
+    <video class="slot" id="hero-video" muted loop playsinline preload="none" aria-label="Slow camera drift across a video production set"></video>
+    <div class="vig"></div>
     <div class="hud" aria-hidden="true">
       <div class="tl"><span class="rec"><i></i>REC</span><span class="pill" id="tc">00:00:00:00</span></div>
-      <div class="tr"><span class="pill">4K</span><span class="pill">24 fps</span><span class="pill">LOG</span></div>
-      <div class="focus"></div>
-      <div class="bl"><span class="pill">ISO 800</span><span class="pill">1/48</span><span class="pill">T2.8</span></div>
-      <div class="br"><span class="pill">WB 5600K</span><span class="pill">A001_C012</span></div>
+      <div class="tr"><span class="pill">4K</span><span class="pill">24 fps</span></div>
     </div>
-    <button class="video-toggle" id="video-toggle" type="button" aria-controls="hero-video">Play video</button>
+    <button class="video-toggle paused" id="video-toggle" type="button" aria-controls="hero-video" aria-label="Play video"></button>
   </div>
 </section>
 
@@ -439,20 +420,20 @@
     <h3>Photography</h3>
     <p class="tag">We bring the studio to you. Products, people and spaces, shot on site.</p>
     <div class="links"><a href="#closer">Learn more</a><a href="#contact">Book a shoot</a></div>
-    <div class="art"><img class="slot" src="images/tile-photo.jpg" alt="Photographer and softbox lighting set up for a portrait in a bright office" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1200" height="1000" decoding="async"></div>
+    <div class="art"><img class="slot" src="images/tile-photo.jpg" alt="Photographer and softbox lighting set up for a portrait in a bright office" loading="lazy" onerror="this.remove()" width="1200" height="1000" decoding="async"></div>
   </div>
-  <div class="tile dark rv d1" id="video">
-    <h3>Video</h3>
-    <p class="tag">Brand films, commercials and social. Concept to color grade, in 4K.</p>
+  <div class="tile dark rv d1" id="brand-films">
+    <h3>Brand films</h3>
+    <p class="tag">Interviews, testimonials and social cuts that say who you are, finished with color and sound.</p>
     <div class="links"><a href="#closer">Learn more</a><a href="#contact">Start a project</a></div>
-    <div class="art"><img class="slot cine" src="images/tile-video.jpg" alt="Business owner in a softly lit cinematic interview" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1600" height="670" decoding="async"></div>
+    <div class="art"><img class="slot cine" src="images/tile-video.jpg" alt="Business owner in a softly lit cinematic interview" loading="lazy" onerror="this.remove()" width="1600" height="670" decoding="async"></div>
   </div>
   <div class="tile light rv" id="ai-apps">
     <h3>AI Apps</h3>
     <p class="tag">Custom assistants, automations and internal tools, built around your business.</p>
     <div class="links"><a href="#features">Learn more</a><a href="#contact">Talk to us</a></div>
     <div class="art">
-      <img class="slot" src="images/tile-ai-apps.png" alt="Custom AI assistant answering an invoice question in a dark chat interface" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1240" height="800" decoding="async">
+      <img class="slot" src="images/tile-ai-apps.jpg" alt="Custom AI assistant listing overdue invoices and offering to draft reminder emails" loading="lazy" onerror="this.remove()" width="1600" height="1000" decoding="async">
 
     </div>
   </div>
@@ -460,16 +441,36 @@
     <h3>AI Integration</h3>
     <p class="tag">Claude, ChatGPT, Gemini and Grok, set up inside your business, with training.</p>
     <div class="links"><a href="#models">Learn more</a><a href="#contact">Get set up</a></div>
-    <div class="art"><img class="slot" src="images/tile-integration.jpg" alt="Small business team learning together around laptops in a bright office" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1200" height="1000" decoding="async">
+    <div class="art"><img class="slot" src="images/tile-integration.jpg" alt="Small business team learning together around laptops in a bright office" loading="lazy" onerror="this.remove()" width="1200" height="1000" decoding="async">
 
     </div>
   </div>
 </div>
 
+<!-- AI Video showcase -->
+<section class="on-white" id="showcase">
+  <div class="wrap-wide">
+    <div class="sh">
+      <p class="eyebrow rv">AI Video Production</p>
+      <h2 class="t-hero rv d1"><span class="grad g-ai">Weeks of work.<br>Days to deliver.</span></h2>
+      <p class="tag rv d2">AI-generated scenes, voices and motion, directed by real filmmakers. This product scene was never shot: no set, no studio, no shipment.</p>
+      <div class="links rv d3"><a href="#compare">Learn more</a><a href="#contact">Start a project</a></div>
+    </div>
+    <figure class="showcase rv">
+      <img src="images/tile-ai-video.jpg" alt="Frosted glass bottle floating above a sculpted ivory surface with a flowing satin ribbon, an AI-generated product concept" loading="lazy" width="1920" height="800" decoding="async">
+    </figure>
+    <div class="trio">
+      <div class="rv"><h4><span class="grad g-ai">Scenes.</span></h4><p>Product shots, environments and B-roll generated to your brief, then color graded to match your real footage.</p></div>
+      <div class="rv d1"><h4><span class="grad g-video">Voices.</span></h4><p>Natural voiceover in any language, so one video speaks to every market you sell in.</p></div>
+      <div class="rv d2"><h4><span class="grad g-green">Motion.</span></h4><p>Titles, transitions and motion graphics cut to music, delivered in every size social needs.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- Statement -->
 <section class="on-dark statement center">
   <div class="wrap">
-    <p class="lede" id="statement">Most studios shoot. Some build software. Studio 18 does both, so your brand looks the same everywhere: on camera, on screen, and inside the tools your team uses every day.</p>
+    <p class="lede" id="statement">Most studios shoot. Some build software. Studio 18 does both, so your brand looks the same everywhere: on&nbsp;camera, on&nbsp;screen, and inside the tools your team uses every day.</p>
   </div>
 </section>
 
@@ -482,18 +483,18 @@
     </div>
     <div class="car-wrap">
       <div class="car" id="car">
-        <article class="card c1"><img class="slot" src="images/work-product.jpg" alt="Ivory ceramic kettle photographed against a seamless neutral backdrop" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Photography</span><h4>Product launch, shot on site.</h4><p>Studio lighting brought to your space. Delivered retouched, web and print ready.</p></div></article>
-        <article class="card c2"><img class="slot" src="images/work-brandfilm.jpg" alt="Ceramic craftsperson shaping a vessel in a sunlit pottery studio" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Video</span><h4>A 90-second brand film.</h4><p>Concept, 4K shoot, edit, color and sound. One story that says who you are.</p></div></article>
-        <article class="card c3"><img class="slot" src="images/work-ai-explainer.jpg" alt="Pastel cubes flowing through a glass ring into an organized stack" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Video</span><h4>Explainers in days, not weeks.</h4><p>AI-generated scenes and voiceover, directed and finished by our editors.</p></div></article>
-        <article class="card c4"><img class="slot" src="images/work-assistant.jpg" alt="Hand holding a phone with a simple appointment-booking chat assistant" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Apps</span><h4>An assistant that knows your business.</h4><p>Trained on your documents. Answers customers and staff around the clock.</p></div></article>
-        <article class="card c5"><img class="slot" src="images/work-headshots.jpg" alt="Professional headshot against a softly lit neutral grey backdrop" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Photography</span><h4>Headshots for the whole team.</h4><p>Consistent, flattering, done in one visit to your office.</p></div></article>
-        <article class="card c6"><img class="slot" src="images/work-automation.jpg" alt="Laptop with email and a business dashboard beside a morning coffee" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Integration</span><h4>AI wired into your workflow.</h4><p>Claude and ChatGPT connected to email, CRM and documents, with training for everyone.</p></div></article>
+        <article class="card c1"><img class="slot" src="images/work-product.jpg" alt="Ivory ceramic kettle photographed against a seamless neutral backdrop" loading="lazy" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Photography</span><h4>Product launch, shot on site.</h4><p>Studio lighting brought to your space. Delivered retouched, web and print ready.</p></div></article>
+        <article class="card c2"><img class="slot" src="images/work-brandfilm.jpg" alt="Ceramic craftsperson shaping a vessel in a sunlit pottery studio" loading="lazy" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Video</span><h4>A 90-second brand film.</h4><p>Concept, 4K shoot, edit, color and sound. One story that says who you are.</p></div></article>
+        <article class="card c3"><img class="slot" src="images/work-ai-explainer.jpg" alt="Pastel cubes flowing through a glass ring into an organized stack" loading="lazy" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Video</span><h4>Explainers in days, not weeks.</h4><p>AI-generated scenes and voiceover, directed and finished by our editors.</p></div></article>
+        <article class="card c4"><img class="slot" src="images/work-assistant.jpg" alt="Hand holding a phone with a simple appointment-booking chat assistant" loading="lazy" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Apps</span><h4>An assistant for your business.</h4><p>Trained on your documents. Answers customers and staff around the clock.</p></div></article>
+        <article class="card c5"><img class="slot" src="images/work-headshots.jpg" alt="Professional headshot against a softly lit neutral grey backdrop" loading="lazy" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Photography</span><h4>Headshots for the whole team.</h4><p>Consistent, flattering, done in one visit to your office.</p></div></article>
+        <article class="card c6"><img class="slot" src="images/work-automation.jpg" alt="Laptop with email and a business dashboard beside a morning coffee" loading="lazy" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Integration</span><h4>AI wired into your workflow.</h4><p>Claude and ChatGPT connected to email, CRM and documents, with training for everyone.</p></div></article>
       </div>
       <div class="car-ctl">
-        <button class="cbtn" id="prev" aria-label="Previous">&#8249;</button>
-        <div class="dots" id="dots" aria-hidden="true"></div>
-        <button class="cbtn" id="next" aria-label="Next">&#8250;</button>
-        <button class="cbtn" id="play" aria-label="Pause autoplay">&#10074;&#10074;</button>
+        <button class="cbtn" id="prev" aria-label="Previous"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dots" id="dots" role="group" aria-label="Choose slide"></div>
+        <button class="cbtn" id="next" aria-label="Next"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="cbtn" id="play" aria-label="Pause autoplay"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3v10M10.5 3v10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l7 5-7 5z" fill="currentColor"/></svg></button>
       </div>
     </div>
   </div>
@@ -523,11 +524,11 @@
     </div>
     <div class="feat">
       <div class="fcard rv"><div class="ic" style="background:linear-gradient(150deg,#ff9f0a,#ff375f)"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h4>We come to you.</h4><p>Lighting, backdrops and cameras arrive at your office, store or site. No studio visit needed.</p><div class="glow" style="background:#ff9f0a"></div></div>
-      <div class="fcard rv d1"><div class="ic" style="background:linear-gradient(150deg,#0a84ff,#5e5ce6)"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8 5v14"/></svg></div><h4>Retouching included.</h4><p>Every photo is color-corrected and retouched before you see it. No add-on fees.</p><div class="glow" style="background:#0a84ff"></div></div>
+      <div class="fcard rv d1"><div class="ic" style="background:linear-gradient(150deg,#0a84ff,#5e5ce6)"><svg viewBox="0 0 24 24"><path d="M4 6h3M11 6h9M4 12h9M17 12h3M4 18h3M11 18h9"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg></div><h4>Retouching included.</h4><p>Every photo is color-corrected and retouched before you see it. No add-on fees.</p><div class="glow" style="background:#0a84ff"></div></div>
       <div class="fcard rv d2"><div class="ic" style="background:linear-gradient(150deg,#bf5af2,#ff375f)"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 10h16M8 6v12M16 6v12"/></svg></div><h4>Color, sound, captions.</h4><p>Video is finished properly: graded, mixed and captioned for every platform.</p><div class="glow" style="background:#bf5af2"></div></div>
       <div class="fcard rv"><div class="ic" style="background:linear-gradient(150deg,#30d158,#64d2ff)"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8c3 0 4 2 7 2s4-2 7-2M5 16c3 0 4-2 7-2s4 2 7 2"/></svg></div><h4>Any language.</h4><p>AI voiceover and subtitles let one video speak to every market you sell in.</p><div class="glow" style="background:#30d158"></div></div>
       <div class="fcard rv d1"><div class="ic" style="background:linear-gradient(150deg,#e08a6a,#19b58d)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div><h4>Model-agnostic.</h4><p>We work with Claude, ChatGPT, Gemini and Grok. You get the right one, not the one we sell.</p><div class="glow" style="background:#19b58d"></div></div>
-      <div class="fcard rv d2"><div class="ic" style="background:linear-gradient(150deg,#48484a,#8e8e93)"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h6M8 11h6"/></svg></div><h4>Training included.</h4><p>Every AI setup ends with hands-on training and written guides your team keeps.</p><div class="glow" style="background:#8e8e93"></div></div>
+      <div class="fcard rv d2"><div class="ic" style="background:linear-gradient(150deg,#ff375f,#ff9f0a)"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h6M8 11h6"/></svg></div><h4>Training included.</h4><p>Every AI setup ends with hands-on training and written guides your team keeps.</p><div class="glow" style="background:#ff375f"></div></div>
     </div>
   </div>
 </section>
@@ -631,12 +632,12 @@
       <div class="rv">
         <p class="tag">Whether it's a shoot next week or an AI rollout across your whole team, this is where it starts.</p>
         <div class="clist">
-          <div><b>Email</b><a href="mailto:hello@studio18productions.com">hello@studio18productions.com</a></div>
+          <div><b>Email</b><a href="mailto:studio18billing@gmail.com">studio18billing@gmail.com</a></div>
           <div><b>Services</b><span>Photography, video, AI video, AI apps, AI integration and training</span></div>
           <div><b>Response time</b><span>Within one business day</span></div>
         </div>
       </div>
-      <form class="form rv d1" id="contact-form" action="mailto:hello@studio18productions.com" method="post" enctype="text/plain">
+      <form class="form rv d1" id="contact-form" action="mailto:studio18billing@gmail.com" method="post" enctype="text/plain">
         <div class="two">
           <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
           <div><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization"></div>
@@ -661,10 +662,10 @@
     </div>
     <div class="fcols">
       <div><b>Photography</b><a href="#photo">On-site photography</a><a href="#closer">Product</a><a href="#closer">Headshots</a><a href="#closer">Spaces and events</a></div>
-      <div><b>Video</b><a href="#video">Video production</a><a href="#ai-video">AI video production</a><a href="#compare">Compare</a></div>
+      <div><b>Video</b><a href="#video">Video production</a><a href="#brand-films">Brand films</a><a href="#showcase">AI video production</a><a href="#compare">Compare</a></div>
       <div><b>AI</b><a href="#ai-apps">Custom AI apps</a><a href="#integration">AI integration</a><a href="#models">Claude</a><a href="#models">ChatGPT</a><a href="#models">Gemini</a><a href="#models">Grok</a></div>
       <div><b>Studio</b><a href="#highlights">Work</a><a href="#features">Why Studio 18</a><a href="#process">How it works</a><a href="#faq">Support</a></div>
-      <div><b>Contact</b><a href="#contact">Get in touch</a><a href="mailto:hello@studio18productions.com">Email us</a></div>
+      <div><b>Contact</b><a href="#contact">Get in touch</a><a href="mailto:studio18billing@gmail.com">Email us</a></div>
     </div>
     <div class="fbot">
       <span>Copyright &copy; 2026 Studio 18 Productions. All rights reserved.</span>
@@ -675,7 +676,7 @@
 
 <script>
 (function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mq=window.matchMedia('(prefers-reduced-motion: reduce)'), reduce=mq.matches||/[?&]noanim/.test(location.search);
   document.documentElement.classList.add('js');
 
   // Reveal on scroll
@@ -692,39 +693,26 @@
 
   // Hero parallax
   var dev=document.getElementById('devices');
-  if(!reduce){ window.addEventListener('scroll',function(){ var y=window.scrollY; if(y<900) dev.style.transform='translateY('+(y*.12)+'px)'; },{passive:true}); }
+  if(!reduce){ window.addEventListener('scroll',function(){ var y=window.scrollY; if(y<900) dev.style.transform='translateY('+Math.min(y*.12,72)+'px)'; },{passive:true}); }
 
   // Timecode
   var tc=document.getElementById('tc'), frames=0;
   function pad(n){return (n<10?'0':'')+n}
   if(!reduce) setInterval(function(){ frames++; tc.textContent='00:'+pad(Math.floor(frames/1440)%60)+':'+pad(Math.floor(frames/24)%60)+':'+pad(frames%24); },1000/24);
 
-  // Aurora canvas
-  var c=document.getElementById('aurora'), ctx=c.getContext('2d'), t=0, running=true, blobs=[
-    {x:.28,y:.45,r:.55,col:[10,132,255],vx:.00045,vy:.0003,ph:0},{x:.74,y:.6,r:.5,col:[255,55,95],vx:-.0004,vy:.00035,ph:2},
-    {x:.55,y:.25,r:.45,col:[191,90,242],vx:.0003,vy:-.0004,ph:4},{x:.86,y:.2,r:.35,col:[255,159,10],vx:-.00035,vy:.00025,ph:1}];
-  function size(){ var d=Math.min(window.devicePixelRatio||1,1.5), w=c.clientWidth,h=c.clientHeight; c.width=w*d; c.height=h*d; ctx.setTransform(d,0,0,d,0,0); }
-  function draw(){ var w=c.clientWidth,h=c.clientHeight; if(!w||!h) return; ctx.fillStyle='#0b0b0d'; ctx.fillRect(0,0,w,h); ctx.globalCompositeOperation='lighter';
-    blobs.forEach(function(b){ var x=(b.x+Math.sin(t*b.vx*60+b.ph)*.08)*w, y=(b.y+Math.cos(t*b.vy*60+b.ph)*.08)*h, r=b.r*Math.max(w,h)*.7; var g=ctx.createRadialGradient(x,y,0,x,y,r);
-      g.addColorStop(0,'rgba('+b.col.join(',')+',.55)'); g.addColorStop(.5,'rgba('+b.col.join(',')+',.18)'); g.addColorStop(1,'rgba('+b.col.join(',')+',0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill(); });
-    ctx.globalCompositeOperation='source-over'; }
-  function loop(){ if(!running) return; t++; draw(); if(!reduce) requestAnimationFrame(loop); }
-  size(); window.addEventListener('resize',function(){ size(); draw(); }); loop();
-  if('IntersectionObserver' in window){ new IntersectionObserver(function(en){ var v=en[0].isIntersecting; if(v&&!running){running=true;loop();} else if(!v){running=false;} }).observe(c); }
-
   // Keep the still visible until playback starts; respect motion preferences.
   var hv=document.getElementById('hero-video'), videoToggle=document.getElementById('video-toggle');
   var videoVisible=false, videoPausedByUser=reduce;
   function playVideo(){
-    if(!hv.getAttribute('src')) hv.src='videos/hero-loop.mp4';
-    hv.play().catch(function(){ videoToggle.textContent='Play video'; });
+    if(!hv.getAttribute('src')){ hv.preload='auto'; hv.src='videos/hero-loop.mp4'; }
+    hv.play().catch(function(){ videoToggle.classList.add('paused'); videoToggle.setAttribute('aria-label','Play video'); });
   }
   function syncVideo(){
     if(videoVisible && !videoPausedByUser && !document.hidden) playVideo();
     else hv.pause();
   }
-  hv.addEventListener('playing',function(){ hv.parentNode.classList.add('has-video'); videoToggle.textContent='Pause video'; running=false; });
-  hv.addEventListener('pause',function(){ videoToggle.textContent='Play video'; });
+  hv.addEventListener('playing',function(){ hv.parentNode.classList.add('has-video'); videoToggle.classList.remove('paused'); videoToggle.setAttribute('aria-label','Pause video'); });
+  hv.addEventListener('pause',function(){ videoToggle.classList.add('paused'); videoToggle.setAttribute('aria-label','Play video'); });
   hv.addEventListener('error',function(){ hv.parentNode.classList.remove('has-video'); videoToggle.hidden=true; });
   videoToggle.addEventListener('click',function(){
     videoPausedByUser=!hv.paused;
@@ -734,27 +722,12 @@
     new IntersectionObserver(function(entries){ videoVisible=entries[0].isIntersecting; syncVideo(); },{threshold:.15}).observe(hv.parentNode);
   } else { videoVisible=true; syncVideo(); }
   document.addEventListener('visibilitychange',syncVideo);
-  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',function(e){ videoPausedByUser=e.matches; syncVideo(); });
-
-  // Chat demo (laptop)
-  var chat=document.getElementById('chat'), script=[
-    ['u','Which invoices are overdue this week?'],
-    ['a','Three: Harbor Dental ($2,400, 12 days), Lane & Co ($860, 6 days), Northside Gym ($1,200, 3 days). Want reminder emails drafted?'],
-    ['u','Yes, friendly tone.'],
-    ['a','Done. Three drafts are in your outbox for review.']];
-  function bubble(role,text){ var d=document.createElement('div'); d.className='msg '+role; d.textContent=text; chat.appendChild(d); return d; }
-  if(reduce){ script.forEach(function(m){ bubble(m[0],m[1]); }); }
-  else{ var i=0; (function next(){
-      if(i>=script.length){ setTimeout(function(){ chat.innerHTML=''; i=0; next(); },5000); return; }
-      var m=script[i++];
-      if(m[0]==='u'){ bubble('u',m[1]); setTimeout(next,700); }
-      else{ var ty=bubble('a',''); ty.className='msg a typing'; ty.innerHTML='<i></i><i></i><i></i>';
-        setTimeout(function(){ ty.className='msg a'; ty.textContent=''; var k=0, iv=setInterval(function(){ ty.textContent=m[1].slice(0,++k); if(k>=m[1].length){ clearInterval(iv); setTimeout(next,1400);} },18); },900); }
-    })(); }
+  var onMq=function(e){ videoPausedByUser=e.matches; syncVideo(); };
+  if(mq.addEventListener){ mq.addEventListener('change',onMq); } else if(mq.addListener){ mq.addListener(onMq); }
 
   // Statement: words brighten with scroll
   var st=document.getElementById('statement');
-  if(st){ var words=st.textContent.trim().split(/\s+/); st.innerHTML=words.map(function(w){ return '<span class="w">'+w+'</span>'; }).join(' ');
+  if(st){ var words=st.textContent.trim().split(/ +/); st.innerHTML=words.map(function(w){ return '<span class="w">'+w+'</span>'; }).join(' ');
     var ws=st.querySelectorAll('.w');
     if(reduce){ ws.forEach(function(w){ w.classList.add('on'); }); }
     else{ function upd(){ var r=st.getBoundingClientRect(), vh=window.innerHeight; var p=(vh*.85-r.top)/(r.height+vh*.35); p=Math.max(0,Math.min(1,p)); var n=Math.round(p*ws.length); ws.forEach(function(w,i){ w.classList.toggle('on',i<n); }); }
@@ -762,16 +735,16 @@
 
   // Carousel with dots and autoplay
   var car=document.getElementById('car'), cards=car.querySelectorAll('.card'), dots=document.getElementById('dots'), play=document.getElementById('play'), auto=!reduce, idx=0, timer;
-  cards.forEach(function(_,i){ var d=document.createElement('i'); if(i===0) d.className='on'; d.addEventListener('click',function(){ go(i); }); dots.appendChild(d); });
+  cards.forEach(function(_,i){ var d=document.createElement('button'); d.type='button'; d.setAttribute('aria-label','Slide '+(i+1)); if(i===0) d.className='on'; d.addEventListener('click',function(){ go(i); }); dots.appendChild(d); });
   function step(){ return cards[0].offsetWidth+20; }
   function go(i){ idx=(i+cards.length)%cards.length; car.scrollTo({left:idx*step(),behavior:'smooth'}); }
-  car.addEventListener('scroll',function(){ var i=Math.round(car.scrollLeft/step()); if(i!==idx){ idx=i; } dots.querySelectorAll('i').forEach(function(d,k){ d.classList.toggle('on',k===idx); }); },{passive:true});
+  car.addEventListener('scroll',function(){ var i=Math.round(car.scrollLeft/step()); if(i!==idx){ idx=i; } dots.querySelectorAll('button').forEach(function(d,k){ d.classList.toggle('on',k===idx); }); },{passive:true});
   document.getElementById('prev').addEventListener('click',function(){ go(idx-1); });
   document.getElementById('next').addEventListener('click',function(){ go(idx+1); });
   function start(){ if(!auto) return; clearInterval(timer); timer=setInterval(function(){ go(idx+1); },5000); }
-  play.addEventListener('click',function(){ auto=!auto; play.innerHTML=auto?'&#10074;&#10074;':'&#9654;'; play.setAttribute('aria-label',auto?'Pause autoplay':'Play autoplay'); if(auto) start(); else clearInterval(timer); });
+  play.addEventListener('click',function(){ auto=!auto; play.classList.toggle('paused',!auto); play.setAttribute('aria-label',auto?'Pause autoplay':'Play autoplay'); if(auto) start(); else clearInterval(timer); });
   car.addEventListener('pointerenter',function(){ clearInterval(timer); }); car.addEventListener('pointerleave',start);
-  if(!auto){ play.innerHTML='&#9654;'; }
+  if(!auto){ play.classList.add('paused'); }
   start();
 })();
 </script>
