@@ -7,7 +7,10 @@
 <meta name="description" content="Studio 18 Productions — on-site photography, video production, AI video, and custom AI applications and integration for businesses.">
 <meta property="og:title" content="Studio 18 Productions">
 <meta property="og:description" content="On-site photography, video production, AI video, and custom AI for businesses.">
-<meta property="og:image" content="images/og.jpg">
+<meta property="og:image" content="https://studio18productions.github.io/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cinema camera and soft studio lighting">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -105,8 +108,9 @@
   .mac{position:relative;margin:0 auto;width:min(760px,90vw)}
   .mac .scr{aspect-ratio:16/10;background:#000;border-radius:16px 16px 0 0;padding:10px 10px 0;box-shadow:0 30px 80px rgba(0,0,0,.28),inset 0 0 0 1px #3a3a3c}
   .mac .disp{height:100%;background:#0e0e10;border-radius:8px 8px 0 0;overflow:hidden;display:grid;grid-template-columns:150px 1fr;text-align:left;color:#f5f5f7;position:relative}
-  .mac .disp img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2}
+  .mac .disp img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:2}
   .mac .disp.has-img img.slot{display:block}
+  .mac .disp.has-img .side,.mac .disp.has-img .chat{visibility:hidden}
   .mac .side{background:#161617;border-right:1px solid #2a2a2d;padding:14px 12px;font-size:11px;color:#86868b}
   .mac .side b{display:block;color:#f5f5f7;font-size:12px;margin-bottom:10px;font-weight:600}
   .mac .side i{display:block;height:8px;border-radius:4px;background:#2c2c2e;margin:9px 0;width:82%}
@@ -124,16 +128,23 @@
   .phone .ps{height:100%;border-radius:24px;background:#fff;overflow:hidden;position:relative}
   .phone .isl{position:absolute;left:50%;top:8px;width:34%;height:9px;border-radius:9px;background:#000;transform:translateX(-50%);z-index:2}
   .phone .grid{position:absolute;inset:34px 8px 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+  .phone .grid img{width:100%;height:100%;min-height:0;object-fit:cover;border-radius:3px}
   .phone .grid i{border-radius:3px;background:#ddd}
   .phone .grid i:nth-child(1){background:linear-gradient(160deg,#ffd60a,#ff9f0a)}.phone .grid i:nth-child(2){background:linear-gradient(160deg,#5e5ce6,#0a84ff)}.phone .grid i:nth-child(3){background:linear-gradient(160deg,#ff375f,#bf5af2)}.phone .grid i:nth-child(4){background:linear-gradient(160deg,#30d158,#64d2ff)}.phone .grid i:nth-child(5){background:linear-gradient(160deg,#1d1d1f,#48484a)}.phone .grid i:nth-child(6){background:linear-gradient(160deg,#ff9f0a,#ff375f)}.phone .grid i:nth-child(7){background:linear-gradient(160deg,#64d2ff,#0a84ff)}.phone .grid i:nth-child(8){background:linear-gradient(160deg,#bf5af2,#5e5ce6)}.phone .grid i:nth-child(9){background:linear-gradient(160deg,#e5e5ea,#c7c7cc)}
   @media (max-width:640px){.phone{display:none}.mac{width:94vw}.mac .disp{grid-template-columns:1fr}.mac .side{display:none}}
 
   /* Cinematic frame (AI Video hero) */
+  .ai-showcase{width:min(1100px,calc(100% - 44px));margin:48px auto 0}
+  .ai-showcase img{display:block;width:100%;height:auto;border-radius:20px}
+  .ai-showcase figcaption{margin-top:14px;font-size:14px;color:var(--ink-2-on-dark)}
   .frame{position:relative;width:100%;aspect-ratio:16/7.2;margin-top:48px;overflow:hidden;background:#0b0b0d}
   .frame canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .frame img.slot,.frame video.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+  .frame img.slot,.frame video.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .frame video.slot{opacity:0;pointer-events:none}
   .frame.has-img canvas{display:none}.frame.has-img img.slot{display:block}
-  .frame.has-video img.slot,.frame.has-video canvas{display:none}.frame.has-video video.slot{display:block}
+  .frame.has-video img.slot,.frame.has-video canvas{display:none}.frame.has-video video.slot{opacity:1}
+  .video-toggle{position:absolute;right:20px;bottom:12px;z-index:3;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(0,0,0,.75);color:#fff;padding:8px 14px;font:inherit;font-size:13px;cursor:pointer}
+  .video-toggle:hover{background:#1d1d1f}
   .frame .grain{position:absolute;inset:0;opacity:.16;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");mix-blend-mode:overlay;pointer-events:none}
   .frame .vig{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 45%,rgba(0,0,0,.7))}
   .frame .bars{position:absolute;left:0;right:0;height:9%;background:#000}
@@ -148,7 +159,7 @@
   .hud .focus{position:absolute;left:50%;top:50%;width:min(26%,220px);aspect-ratio:1.4;transform:translate(-50%,-50%);border:1.5px solid rgba(255,255,255,.7);border-radius:6px}
   .hud .focus::before,.hud .focus::after{content:"";position:absolute;left:50%;top:50%;background:rgba(255,255,255,.75)}
   .hud .focus::before{width:14px;height:1.5px;transform:translate(-50%,-50%)}.hud .focus::after{width:1.5px;height:14px;transform:translate(-50%,-50%)}
-  @media (max-width:640px){.frame{aspect-ratio:4/4}.hud .tr,.hud .br{display:none}}
+  @media (max-width:640px){.frame{aspect-ratio:4/4}.frame img.slot,.frame video.slot{object-position:70% center}.hud .tr,.hud .br{display:none}.ai-showcase{width:calc(100% - 24px)}.ai-showcase img{border-radius:14px}}
 
   /* Two-column tile grid (apple.com) */
   .tiles{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);padding:var(--gap);background:var(--snow)}
@@ -161,11 +172,10 @@
   .tile .tag{margin-top:8px;font-size:clamp(17px,1.8vw,21px);max-width:40ch}
   .tile .links{margin-top:12px;font-size:17px}
   .tile .art{margin-top:auto;width:100%;position:relative}
-  .art img.slot{display:none}
-  .art.has-img>*:not(img){display:none}
-  .art.has-img img.slot{display:block;width:min(560px,94%);margin:30px auto -40px;border-radius:14px 14px 0 0;box-shadow:0 30px 70px rgba(0,0,0,.3);object-fit:cover;aspect-ratio:16/10}
-  .art.has-img img.slot.cine{aspect-ratio:2.39;width:min(700px,94%)}
-  @media (max-width:860px){.tiles{grid-template-columns:1fr}.tile{min-height:520px}}
+  .art img.slot{display:block;width:min(560px,100%);height:auto;margin:30px auto 0;border-radius:16px 16px 0 0;box-shadow:0 30px 70px rgba(0,0,0,.3);object-fit:cover}
+
+  .art img.slot.cine{width:min(700px,100%)}
+  @media (max-width:860px){.tiles{grid-template-columns:1fr}.tile{min-height:0}.tile .art{margin-top:24px}.art img.slot{margin-top:0}}
 
   /* Camera */
   .cam{width:min(360px,80%);aspect-ratio:1.25;margin:34px auto -46px;border-radius:30px 30px 0 0;background:linear-gradient(180deg,#48484a,#1c1c1e 70%);position:relative;box-shadow:0 40px 80px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.25)}
@@ -215,10 +225,9 @@
   .car-wrap{position:relative;margin-top:56px}
   .car{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 22px 24px;margin:0 -22px;scrollbar-width:none}
   .car::-webkit-scrollbar{display:none}
-  .card{flex:0 0 min(405px,80vw);aspect-ratio:405/740;border-radius:20px;scroll-snap-align:center;position:relative;overflow:hidden;color:#fff;padding:32px 28px;display:flex;flex-direction:column;justify-content:flex-start;background:#1d1d1f}
-  .card img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:0}
-  .card.has-img img.slot{display:block}
-  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0) 45%);z-index:1}
+  .card{flex:0 0 min(405px,80vw);border-radius:20px;scroll-snap-align:center;position:relative;overflow:hidden;color:#fff;display:flex;flex-direction:column;background:#1d1d1f}
+  .card img.slot{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+  .card-copy{padding:28px;flex:1;background:#161617}
   .card>*{position:relative;z-index:2}
   .card .k{font-size:14px;font-weight:600;opacity:.85}
   .card h4{font-size:28px;font-weight:600;margin-top:6px;letter-spacing:-.025em;max-width:12ch}
@@ -263,7 +272,7 @@
   .row ul li{display:flex;gap:12px;align-items:flex-start}
   .row ul li::before{content:"";flex:0 0 18px;height:18px;border-radius:50%;background:var(--btn);mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='10' fill='white'/><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><circle cx='10' cy='10' r='10' fill='white'/><path d='M5 10.5l3.2 3.2L15 7' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;margin-top:2px}
   .pic{aspect-ratio:4/3;border-radius:18px;position:relative;overflow:hidden}
-  .pic img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+  .pic img.slot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   .pic.has-img img.slot{display:block}
   .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 50%);pointer-events:none}
   .pic.p1{background:radial-gradient(60% 60% at 30% 30%,#ffd60a,transparent 60%),linear-gradient(160deg,#ff9f0a,#ff453a)}
@@ -375,13 +384,23 @@
   <div class="devices rv d2" id="devices" aria-label="A laptop running a custom AI assistant beside a phone showing a photo gallery" role="img">
     <div class="mac">
       <div class="scr"><div class="disp" id="disp">
-        <img class="slot" src="images/tile-ai-apps.png" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()">
+        <img class="slot" src="images/tile-ai-apps.png" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1240" height="800" decoding="async" fetchpriority="high">
         <div class="side"><b>Studio 18 Assistant</b><i></i><i></i><i></i><i></i><i></i></div>
         <div class="chat" id="chat"></div>
       </div></div>
       <div class="base"></div>
     </div>
-    <div class="phone" aria-hidden="true"><div class="ps"><div class="isl"></div><div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+    <div class="phone" aria-hidden="true"><div class="ps"><div class="isl"></div><div class="grid">
+      <img src="images/work-product.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
+      <img src="images/work-brandfilm.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
+      <img src="images/work-headshots.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
+      <img src="images/work-ai-explainer.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
+      <img src="images/work-assistant.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
+      <img src="images/work-automation.jpg" alt="" loading="lazy" width="900" height="1200" decoding="async">
+      <img src="images/detail-photo.jpg" alt="" loading="lazy" width="1600" height="1200" decoding="async">
+      <img src="images/detail-video.jpg" alt="" loading="lazy" width="1600" height="1200" decoding="async">
+      <img src="images/tile-ai-video.jpg" alt="" loading="lazy" width="1920" height="800" decoding="async">
+    </div></div></div>
   </div>
 </header>
 
@@ -393,10 +412,14 @@
     <p class="tag rv d2">AI-generated scenes, voices and motion, directed by real filmmakers.</p>
     <div class="links rv d3"><a href="#compare">Learn more</a><a href="#contact">Start a project</a></div>
   </div>
-  <div class="frame rv d3" id="frame" role="img" aria-label="Cinematic light and color framed like a camera viewfinder">
-    <canvas id="aurora"></canvas>
-    <img class="slot" src="images/hero.jpg" alt="" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()">
-    <video class="slot" id="hero-video" autoplay muted loop playsinline preload="metadata"></video>
+  <figure class="ai-showcase rv">
+    <img src="images/tile-ai-video.jpg" alt="Frosted glass bottle floating above a sculpted ivory surface with a flowing satin ribbon" loading="lazy" width="1920" height="800" decoding="async">
+    <figcaption>AI-generated product concept</figcaption>
+  </figure>
+  <div class="frame rv d3" id="frame" role="group" aria-label="Behind the scenes of a cinema production">
+    <canvas id="aurora" aria-hidden="true"></canvas>
+    <img class="slot" src="images/hero.jpg" alt="Cinema camera rig on a set with soft blue, magenta and amber lights" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="2400" height="1290" decoding="async">
+    <video class="slot" id="hero-video" muted loop playsinline preload="none" poster="images/hero.jpg" aria-label="Slow camera drift across a cinema production set"></video>
     <div class="grain"></div><div class="vig"></div>
     <div class="bars t"></div><div class="bars b"></div>
     <div class="hud" aria-hidden="true">
@@ -406,6 +429,7 @@
       <div class="bl"><span class="pill">ISO 800</span><span class="pill">1/48</span><span class="pill">T2.8</span></div>
       <div class="br"><span class="pill">WB 5600K</span><span class="pill">A001_C012</span></div>
     </div>
+    <button class="video-toggle" id="video-toggle" type="button" aria-controls="hero-video">Play video</button>
   </div>
 </section>
 
@@ -415,28 +439,29 @@
     <h3>Photography</h3>
     <p class="tag">We bring the studio to you. Products, people and spaces, shot on site.</p>
     <div class="links"><a href="#closer">Learn more</a><a href="#contact">Book a shoot</a></div>
-    <div class="art"><img class="slot" src="images/tile-photo.jpg" alt="On-site photography by Studio 18" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><div class="cam" aria-hidden="true"><span class="lbl">STUDIO 18</span><span class="grip"></span></div></div>
+    <div class="art"><img class="slot" src="images/tile-photo.jpg" alt="Photographer and softbox lighting set up for a portrait in a bright office" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1200" height="1000" decoding="async"></div>
   </div>
   <div class="tile dark rv d1" id="video">
     <h3>Video</h3>
     <p class="tag">Brand films, commercials and social. Concept to color grade, in 4K.</p>
     <div class="links"><a href="#closer">Learn more</a><a href="#contact">Start a project</a></div>
-    <div class="art"><img class="slot cine" src="images/tile-video.jpg" alt="Video production by Studio 18" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><div class="film" aria-hidden="true"><span class="eq"><i></i><i></i><i></i><i></i><i></i></span><span class="tc">00:00:18:00</span></div></div>
+    <div class="art"><img class="slot cine" src="images/tile-video.jpg" alt="Business owner in a softly lit cinematic interview" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1600" height="670" decoding="async"></div>
   </div>
   <div class="tile light rv" id="ai-apps">
     <h3>AI Apps</h3>
     <p class="tag">Custom assistants, automations and internal tools, built around your business.</p>
     <div class="links"><a href="#features">Learn more</a><a href="#contact">Talk to us</a></div>
     <div class="art">
-      <div class="phone solo" aria-hidden="true"><div class="ps"><div class="isl"></div><div class="pchat"><div class="msg u">Draft a quote for the Harbor Dental shoot</div><div class="msg a">Done. Two-day on-site shoot, 40 retouched photos, one 60-second video. Sent to your outbox.</div><div class="msg u">Add a Spanish version of the video</div><div class="msg a">Added. AI voiceover, same cut.</div></div></div></div>
+      <img class="slot" src="images/tile-ai-apps.png" alt="Custom AI assistant answering an invoice question in a dark chat interface" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1240" height="800" decoding="async">
+
     </div>
   </div>
   <div class="tile dark rv d1" id="integration">
     <h3>AI Integration</h3>
     <p class="tag">Claude, ChatGPT, Gemini and Grok, set up inside your business, with training.</p>
     <div class="links"><a href="#models">Learn more</a><a href="#contact">Get set up</a></div>
-    <div class="art"><img class="slot" src="images/tile-integration.jpg" alt="AI integration and team training" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()">
-      <div class="orbit" aria-hidden="true"><div class="ring"></div><div class="core"><span>18<small>STUDIO</small></span></div><div class="m m1">Claude<small>ANTHROPIC</small></div><div class="m m2">ChatGPT<small>OPENAI</small></div><div class="m m3">Gemini<small>GOOGLE</small></div><div class="m m4">Grok<small>xAI</small></div></div>
+    <div class="art"><img class="slot" src="images/tile-integration.jpg" alt="Small business team learning together around laptops in a bright office" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1200" height="1000" decoding="async">
+
     </div>
   </div>
 </div>
@@ -457,12 +482,12 @@
     </div>
     <div class="car-wrap">
       <div class="car" id="car">
-        <article class="card c1"><img class="slot" src="images/work-product.jpg" alt="Product photography" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="k">Photography</span><h4>Product launch, shot on site.</h4><p>Studio lighting brought to your space. Delivered retouched, web and print ready.</p></article>
-        <article class="card c2"><img class="slot" src="images/work-brandfilm.jpg" alt="Brand film still" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="k">Video</span><h4>A 90-second brand film.</h4><p>Concept, 4K shoot, edit, color and sound. One story that says who you are.</p></article>
-        <article class="card c3"><img class="slot" src="images/work-ai-explainer.jpg" alt="AI explainer still" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="k">AI Video</span><h4>Explainers in days, not weeks.</h4><p>AI-generated scenes and voiceover, directed and finished by our editors.</p></article>
-        <article class="card c4"><img class="slot" src="images/work-assistant.jpg" alt="Customer assistant app" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="k">AI Apps</span><h4>An assistant that knows your business.</h4><p>Trained on your documents. Answers customers and staff around the clock.</p></article>
-        <article class="card c5"><img class="slot" src="images/work-headshots.jpg" alt="Team headshot" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="k">Photography</span><h4>Headshots for the whole team.</h4><p>Consistent, flattering, done in one visit to your office.</p></article>
-        <article class="card c6"><img class="slot" src="images/work-automation.jpg" alt="Workflow automation" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"><span class="k">AI Integration</span><h4>AI wired into your workflow.</h4><p>Claude and ChatGPT connected to email, CRM and documents, with training for everyone.</p></article>
+        <article class="card c1"><img class="slot" src="images/work-product.jpg" alt="Ivory ceramic kettle photographed against a seamless neutral backdrop" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Photography</span><h4>Product launch, shot on site.</h4><p>Studio lighting brought to your space. Delivered retouched, web and print ready.</p></div></article>
+        <article class="card c2"><img class="slot" src="images/work-brandfilm.jpg" alt="Ceramic craftsperson shaping a vessel in a sunlit pottery studio" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Video</span><h4>A 90-second brand film.</h4><p>Concept, 4K shoot, edit, color and sound. One story that says who you are.</p></div></article>
+        <article class="card c3"><img class="slot" src="images/work-ai-explainer.jpg" alt="Pastel cubes flowing through a glass ring into an organized stack" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Video</span><h4>Explainers in days, not weeks.</h4><p>AI-generated scenes and voiceover, directed and finished by our editors.</p></div></article>
+        <article class="card c4"><img class="slot" src="images/work-assistant.jpg" alt="Hand holding a phone with a simple appointment-booking chat assistant" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Apps</span><h4>An assistant that knows your business.</h4><p>Trained on your documents. Answers customers and staff around the clock.</p></div></article>
+        <article class="card c5"><img class="slot" src="images/work-headshots.jpg" alt="Professional headshot against a softly lit neutral grey backdrop" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">Photography</span><h4>Headshots for the whole team.</h4><p>Consistent, flattering, done in one visit to your office.</p></div></article>
+        <article class="card c6"><img class="slot" src="images/work-automation.jpg" alt="Laptop with email and a business dashboard beside a morning coffee" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="900" height="1200" decoding="async"><div class="card-copy"><span class="k">AI Integration</span><h4>AI wired into your workflow.</h4><p>Claude and ChatGPT connected to email, CRM and documents, with training for everyone.</p></div></article>
       </div>
       <div class="car-ctl">
         <button class="cbtn" id="prev" aria-label="Previous">&#8249;</button>
@@ -515,10 +540,10 @@
       <p class="tag rv d1">What's included in each service.</p>
     </div>
     <div class="rows">
-      <div class="row rv"><div><h3>On-site photography</h3><p>We bring the studio to your location so products, people and spaces are photographed in context.</p><ul><li>Product, headshot, real estate and event photography</li><li>Professional lighting and backdrops brought on site</li><li>Color-corrected, retouched files, web and print ready</li></ul></div><div class="pic p1"><img class="slot" src="images/detail-photo.jpg" alt="Lighting setup on location" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div></div>
-      <div class="row rv"><div><h3>Video production</h3><p>Full-service production for brands that want to be seen and remembered.</p><ul><li>Brand films, ads, testimonials and social cuts</li><li>4K cinema cameras, lighting, audio and drone</li><li>Editing, color grading, sound design and captions</li></ul></div><div class="pic p2"><img class="slot" src="images/detail-video.jpg" alt="Video crew at work" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div></div>
-      <div class="row rv"><div><h3>AI video production</h3><p>Generative video, directed. New tools create visuals, voices and scenes that would be impossible or too expensive to shoot.</p><ul><li>AI-generated scenes, product visuals and B-roll</li><li>Natural voiceover and multilingual versions</li><li>Explainers, ads and social content at high volume</li></ul></div><div class="pic p3"><img class="slot" src="images/detail-ai-video.jpg" alt="Editor at a color grading suite" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div></div>
-      <div class="row rv"><div><h3>AI apps, integration and training</h3><p>We build the AI tools your business needs, connect the major models to your workflow, and make sure your team actually uses them.</p><ul><li>Custom assistants, automations and internal tools</li><li>Claude, ChatGPT, Gemini and Grok setup and configuration</li><li>Hands-on team training and ongoing support</li></ul></div><div class="pic p4"><img class="slot" src="images/detail-ai.jpg" alt="Hands-on AI training session" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div></div>
+      <div class="row rv"><div><h3>On-site photography</h3><p>We bring the studio to your location so products, people and spaces are photographed in context.</p><ul><li>Product, headshot, real estate and event photography</li><li>Professional lighting and backdrops brought on site</li><li>Color-corrected, retouched files, web and print ready</li></ul></div><div class="pic p1"><img class="slot" src="images/detail-photo.jpg" alt="Camera on a tripod, softboxes and a grey backdrop set up in an office" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1600" height="1200" decoding="async"></div></div>
+      <div class="row rv"><div><h3>Video production</h3><p>Full-service production for brands that want to be seen and remembered.</p><ul><li>Brand films, ads, testimonials and social cuts</li><li>4K cinema cameras, lighting, audio and drone</li><li>Editing, color grading, sound design and captions</li></ul></div><div class="pic p2"><img class="slot" src="images/detail-video.jpg" alt="Camera operator, boom operator and director with a drone on an equipment case" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1600" height="1200" decoding="async"></div></div>
+      <div class="row rv"><div><h3>AI video production</h3><p>Generative video, directed. New tools create visuals, voices and scenes that would be impossible or too expensive to shoot.</p><ul><li>AI-generated scenes, product visuals and B-roll</li><li>Natural voiceover and multilingual versions</li><li>Explainers, ads and social content at high volume</li></ul></div><div class="pic p3"><img class="slot" src="images/detail-ai-video.jpg" alt="Editor at a color-grading desk reviewing a surreal landscape on a large monitor" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1600" height="1200" decoding="async"></div></div>
+      <div class="row rv"><div><h3>AI apps, integration and training</h3><p>We build the AI tools your business needs, connect the major models to your workflow, and make sure your team actually uses them.</p><ul><li>Custom assistants, automations and internal tools</li><li>Claude, ChatGPT, Gemini and Grok setup and configuration</li><li>Hands-on team training and ongoing support</li></ul></div><div class="pic p4"><img class="slot" src="images/detail-ai.jpg" alt="Instructor pointing at an AI chat interface during a team training session" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()" width="1600" height="1200" decoding="async"></div></div>
     </div>
   </div>
 </section>
@@ -687,9 +712,29 @@
   size(); window.addEventListener('resize',function(){ size(); draw(); }); loop();
   if('IntersectionObserver' in window){ new IntersectionObserver(function(en){ var v=en[0].isIntersecting; if(v&&!running){running=true;loop();} else if(!v){running=false;} }).observe(c); }
 
-  // Optional hero video
-  var hv=document.getElementById('hero-video');
-  if(hv && !reduce){ fetch('videos/hero-loop.mp4',{method:'HEAD'}).then(function(r){ if(r.ok && /video/.test(r.headers.get('content-type')||'')){ hv.src='videos/hero-loop.mp4'; hv.parentNode.classList.add('has-video'); running=false; } }).catch(function(){}); }
+  // Keep the still visible until playback starts; respect motion preferences.
+  var hv=document.getElementById('hero-video'), videoToggle=document.getElementById('video-toggle');
+  var videoVisible=false, videoPausedByUser=reduce;
+  function playVideo(){
+    if(!hv.getAttribute('src')) hv.src='videos/hero-loop.mp4';
+    hv.play().catch(function(){ videoToggle.textContent='Play video'; });
+  }
+  function syncVideo(){
+    if(videoVisible && !videoPausedByUser && !document.hidden) playVideo();
+    else hv.pause();
+  }
+  hv.addEventListener('playing',function(){ hv.parentNode.classList.add('has-video'); videoToggle.textContent='Pause video'; running=false; });
+  hv.addEventListener('pause',function(){ videoToggle.textContent='Play video'; });
+  hv.addEventListener('error',function(){ hv.parentNode.classList.remove('has-video'); videoToggle.hidden=true; });
+  videoToggle.addEventListener('click',function(){
+    videoPausedByUser=!hv.paused;
+    if(videoPausedByUser) hv.pause(); else playVideo();
+  });
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){ videoVisible=entries[0].isIntersecting; syncVideo(); },{threshold:.15}).observe(hv.parentNode);
+  } else { videoVisible=true; syncVideo(); }
+  document.addEventListener('visibilitychange',syncVideo);
+  window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',function(e){ videoPausedByUser=e.matches; syncVideo(); });
 
   // Chat demo (laptop)
   var chat=document.getElementById('chat'), script=[
