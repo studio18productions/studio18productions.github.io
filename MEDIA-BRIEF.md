@@ -22,16 +22,15 @@ automatically. A wrong filename simply does nothing. No HTML edits are needed or
 ### Hero
 | File | Size (px) | Content |
 |---|---|---|
-| `images/hero.jpg` | 2400 × 1290 | Dark, cinematic behind-the-scenes on a video shoot: cinema camera on a rig in the foreground, soft colored practical lights (blue, magenta, amber) in the background, shallow depth of field. Mostly dark tones so white text reads over it. |
-| `videos/hero-loop.mp4` | 1920 × 1032, 8–12 s, under 8 MB | Optional. Same scene as the hero image, slow camera drift, seamless loop. |
+| `images/hero.jpg` | 2400 × 1080 (16:7.2) | The AI Video hero. A wide cinematic frame that looks AI-generated but tasteful: an abstract premium product (a clean bottle or device) floating in soft colored light (blue, magenta, amber) on a dark background. Mostly dark tones so the white camera overlay reads over it. |
+| `videos/hero-loop.mp4` | 1920 × 864, 8–12 s, under 8 MB | Optional. Same scene as hero.jpg, slow camera drift, seamless loop. |
 
 ### Service tiles
 | File | Size (px) | Content |
 |---|---|---|
 | `images/tile-photo.jpg` | 1200 × 1000 | A photographer on location (office or retail space) with a softbox and a mirrorless camera, bright and clean, white or light background. |
 | `images/tile-video.jpg` | 1600 × 670 (2.39:1) | A single beautiful cinematic film frame: an interview subject lit with a key light, dark background, looks like a still from a brand film. |
-| `images/tile-ai-video.jpg` | 1920 × 800 (2.39:1) | A frame that looks AI-generated but tasteful: an abstract product hero shot (a clean bottle or device) floating in soft light, surreal but elegant. |
-| `images/tile-ai-apps.png` | 1240 × 800 | Screenshot-style mockup of a custom AI assistant interface: dark UI, sidebar, a chat with two or three short messages about invoices or scheduling. No real company names. |
+| `images/tile-ai-apps.png` | 1600 × 1000 (16:10) | Shown on the laptop screen in the top hero. Screenshot-style mockup of a custom AI assistant interface: dark UI, sidebar, a chat with two or three short messages about invoices or scheduling. No real company names. |
 | `images/tile-integration.jpg` | 1200 × 1000 | A small business team at a table with laptops, one person presenting, bright office, natural light. Training session feel. |
 
 ### Work carousel (portrait 3:4, 900 × 1200 each)
