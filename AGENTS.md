@@ -1,13 +1,15 @@
 # Studio 18 Productions website — instructions for Codex / ChatGPT
 
 ## Who does what
-- **Claude builds the website** and is the ONLY one who edits `index.html`. Layout, copy, CSS,
-  structure and placing media into the page all belong to Claude.
+- **Claude builds the website** and is the ONLY one who edits `index.html`. Layout, copy, CSS
+  and structure belong to Claude.
 - **Codex / ChatGPT produce the media.** Photos, video, mockups: generate, shoot-prep, crop,
   color-correct, optimize, and save them with the exact filenames in `MEDIA-BRIEF.md`.
 
 ## Rules
 - Read `MEDIA-BRIEF.md`. It lists every file, its exact filename, pixel size and content.
+- The page has a slot pre-wired for each filename. Drop the file in with the exact name and it
+  shows up on the live site automatically. You never need to touch the HTML.
 - Save photos to `images/` and video to `videos/`. Never rename files or invent new filenames.
   If you need an extra asset, add it with a clear name and list it in `NOTES-FOR-CLAUDE.md`.
 - Do NOT edit `index.html`, `AGENTS.md` or `MEDIA-BRIEF.md`. If something in the design
@@ -27,4 +29,4 @@
 
 ## Publishing media
 `git add -A && git commit -m "Add media per MEDIA-BRIEF" && git push`
-Then say "media pushed" so Claude can place the files.
+Then check https://studio18productions.github.io after a minute and say "media pushed".

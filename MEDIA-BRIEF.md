@@ -1,8 +1,11 @@
 # Media brief for Studio 18 Productions website
 
 This is the shot list for ChatGPT / Codex. Produce these files, put them in the folders named
-below with EXACTLY these filenames, then push. Do not edit index.html. Claude places every
-file into the page.
+below with EXACTLY these filenames, then push. Do not edit index.html.
+
+The page already has a slot wired for every filename below. As soon as a file with the exact
+name exists in `images/` or `videos/`, it appears in the right spot on the live site
+automatically. A wrong filename simply does nothing. No HTML edits are needed or allowed.
 
 ## Style (applies to everything)
 - Apple-style: clean, bright, neutral, real-looking, lots of negative space. No heavy filters,
@@ -58,4 +61,6 @@ file into the page.
 1. Check every file is in `images/` or `videos/` with the exact filename above.
 2. Check sizes and file weights match.
 3. Run: `git add -A && git commit -m "Add media per MEDIA-BRIEF" && git push`
-4. Tell the owner "media pushed" so Claude can place the files into the site.
+4. Wait about a minute, then open https://studio18productions.github.io and confirm each
+   image shows in its spot. If one is missing, the filename or folder is wrong; fix and push again.
+5. Tell the owner "media pushed".
