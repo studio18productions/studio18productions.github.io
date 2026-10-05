@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Studio 18 · Lens 8. 512 grid, stroke 68. 1: stem 68, flag reach 48 at 55°. Gap 1→8 = 34 (half a stroke). -->
+  <!-- 8: two lens rings R112 over R128; counters are true holes. Numerals inherit currentColor. -->
+  <path fill="currentColor" fill-rule="evenodd" d="M101 62H169V450H101V142L53 210V130ZM242 236A112 112 0 1 1 420 236A128 128 0 1 1 242 236ZM287 168a44 44 0 1 0 88 0a44 44 0 1 0 -88 0ZM271 328a60 60 0 1 0 120 0a60 60 0 1 0 -120 0Z"/>
+  <!-- Focus / record dot inside the upper counter: r20, gap 24 to the ring. -->
+  <circle fill="#0071e3" cx="331" cy="168" r="20"/>
+</svg>

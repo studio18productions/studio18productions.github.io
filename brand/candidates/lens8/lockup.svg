@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" width="1600" height="400">
+  <!-- Studio 18 Productions · primary lockup. The mark is the "18" of the wordmark (the typeset 18 beside a drawn 18 read as two different 18s). Mark scaled so the 1 equals Inter's cap height (0.7275 em); stem sits 0.44 em after the o. "Productions" 500 beneath, left-aligned. letter-spacing = -0.03em. -->
+  <text x="114.7" y="260.8" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="600" font-size="340" letter-spacing="-10.2" fill="currentColor">Studio</text>
+  <g transform="translate(1192.7 -26) scale(0.6375)">
+    <path fill="currentColor" fill-rule="evenodd" d="M101 62H169V450H101V142L53 210V130ZM242 236A112 112 0 1 1 420 236A128 128 0 1 1 242 236ZM287 168a44 44 0 1 0 88 0a44 44 0 1 0 -88 0ZM271 328a60 60 0 1 0 120 0a60 60 0 1 0 -120 0Z"/>
+    <circle fill="#0071e3" cx="331" cy="168" r="20"/>
+  </g>
+  <text x="114.7" y="386.5" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="500" font-size="112" letter-spacing="-3.4" fill="currentColor">Productions</text>
+</svg>

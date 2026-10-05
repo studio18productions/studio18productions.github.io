@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Studio 18 · Signal 18. 512 grid on 32-unit pixel cells (1 cell = 1 px at 16 px). Stroke 64 = 2 px at 16 px. -->
+  <!-- currentColor default when the file stands alone (favicon, <img>); inherits the host colour when inlined. -->
+  <style>svg:root{color:#1d1d1f}</style>
+  <!-- 1: stem on cells x 96–160, top 56 / base 456 (8 units inside the 8's overshoot). Short steep flag: 56 across, 72 down, vertical cut 128–216. -->
+  <path fill="currentColor" d="M96 56H160V456H96V144L40 216V128Z"/>
+  <!-- 8: two rings sharing one stroke. Upper R114 at (318,162), lower R126 at (318,338). Counters r50 / r62 are true holes. Half-stroke gap (32) from the stem to the lower ring at x 192. -->
+  <path fill="currentColor" fill-rule="evenodd" d="M236.6 241.8A114 114 0 1 1 399.4 241.8A126 126 0 1 1 236.6 241.8ZM268 162a50 50 0 1 0 100 0a50 50 0 1 0-100 0ZM256 338a62 62 0 1 0 124 0a62 62 0 1 0-124 0Z"/>
+  <!-- Signal: one blue dot centred in the upper counter. r32 inside r50 leaves an 18-unit ring (36 % of the counter radius). -->
+  <circle cx="318" cy="162" r="32" fill="#0071e3"/>
+</svg>

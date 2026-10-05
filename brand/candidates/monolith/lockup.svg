@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400">
+<g transform="translate(64.8,-9.8) scale(0.819672)">
+<path fill="currentColor" fill-rule="evenodd" d="M332,73 A100,100 0 0 1 403.6,242.8 A106,106 0 0 1 438,321 L438,333 A106,106 0 0 1 226,333 L226,321 A106,106 0 0 1 260.4,242.8 A100,100 0 0 1 332,73 Z M290,173 A42,42 0 1 1 374,173 A42,42 0 1 1 290,173 Z M284,321 A48,48 0 0 1 380,321 L380,333 A48,48 0 0 1 284,333 Z M122,77 L180,77 180,435 122,435 122,137 66,183 66,123 Z"/>
+<circle cx="332" cy="173" r="27" fill="#0071e3"/>
+</g>
+<text x="499.8" y="221.9" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="600" font-size="232" letter-spacing="-0.03em" fill="currentColor">Studio 18</text>
+<text x="499.8" y="346.7" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="500" font-size="104" letter-spacing="-0.025em" fill="currentColor">Productions</text>
+</svg>

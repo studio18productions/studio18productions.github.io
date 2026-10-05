@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" width="1600" height="400">
+  <!-- Studio 18 Productions · alternative lockup (not chosen: shows a typeset 18 beside the drawn 18). Mark left at 300px (scale 0.75); "Studio 18" cap-top on the 1's top, "Productions" baseline on the 1's foot. letter-spacing = -0.03em. -->
+  <g transform="translate(94.6 8) scale(0.7500)">
+    <path fill="currentColor" fill-rule="evenodd" d="M101 62H169V450H101V142L53 210V130ZM242 236A112 112 0 1 1 420 236A128 128 0 1 1 242 236ZM287 168a44 44 0 1 0 88 0a44 44 0 1 0 -88 0ZM271 328a60 60 0 1 0 120 0a60 60 0 1 0 -120 0Z"/>
+    <circle fill="#0071e3" cx="331" cy="168" r="20"/>
+  </g>
+  <text x="534.9" y="217.5" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="600" font-size="224" letter-spacing="-6.7" fill="currentColor">Studio 18</text>
+  <text x="534.9" y="345.5" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="500" font-size="96" letter-spacing="-2.9" fill="currentColor">Productions</text>
+</svg>

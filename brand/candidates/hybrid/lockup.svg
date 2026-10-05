@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" width="1600" height="400">
+  <!-- Studio 18 · Signal 18 lockup. Mark scaled 0.72 so the 8 stands 300 tall (y 50–350); ink block (x 157–1443) centred on the 1600 artboard. Wordmark block shares that height: "Studio 18" cap-height = upper bowl diameter (164); "Productions" x-height = upper counter diameter (72) and sits on the mark's baseline. -->
+  <style>svg:root{color:#1d1d1f}</style>
+  <g transform="translate(128.2 15.44) scale(0.72)">
+    <path fill="currentColor" d="M96 56H160V456H96V144L40 216V128Z"/>
+    <path fill="currentColor" fill-rule="evenodd" d="M236.6 241.8A114 114 0 1 1 399.4 241.8A126 126 0 1 1 236.6 241.8ZM268 162a50 50 0 1 0 100 0a50 50 0 1 0-100 0ZM256 338a62 62 0 1 0 124 0a62 62 0 1 0-124 0Z"/>
+    <circle cx="318" cy="162" r="32" fill="#0071e3"/>
+  </g>
+  <text x="509" y="214" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="600" font-size="226" style="letter-spacing:-0.03em" fill="currentColor">Studio 18</text>
+  <text x="509" y="350" font-family="Inter, -apple-system, Helvetica, Arial, sans-serif" font-weight="400" font-size="132" style="letter-spacing:-0.03em" fill="currentColor">Productions</text>
+</svg>
